@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, #726fdf, #31c6da);
+}
+
+#root {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.layout header {
+  width: 100%;
+  display: flex;
+  position: relative;
+  z-index: 2;
+}
+
+.layout header div {
+  margin-bottom: -3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #4b5368;
+}
+
+.layout header .activePage {
+  color: #f9f9f9;
+}
+
+.layout header .activePage div {
+  background-color: #7d73dc;
+}
+
+.layout header a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+  background-color: #1a202a;
+  color: #4b5368;
+  width: 13rem;
+  padding: 15px 0px;
+  margin-right: 20px;
+  font-weight: bold;
+  box-shadow: 0 -5px 5px 1px rgba(53, 59, 69, 0.3);
+}
+
+.layout header a span {
+  margin-left: 10px;
+}
+
+.layout main {
+  position: relative;
+  z-index: 1;
+  width: 50rem;
+  background-color: #1a202a;
+  border-radius: 0 20px 20px 20px;
+  box-shadow: 0 0 5px 1px rgba(53, 59, 69, 0.5);
+  padding: 37px;
+}
+
+/* new_Customer */
+.new_Customer h1,
+.customers h1 {
+  color: #fff;
+  font-weight: lighter;
+  user-select: none;
+}
+
+.new_Customer h1 span {
+  margin-left: 5px;
+  font-weight: 500;
+  color: #adb1ff;
+  text-shadow: 0 0 10px rgba(173, 177, 255, 0.4);
+}
+
+.new_Customer form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.new_Customer form .formControl {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.new_Customer form .formControl label {
+  color: #8d9aa6;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.new_Customer form .formControl:first-child label {
+  margin: 0;
+}
+
+.new_Customer form .formControl input[type="text"],
+.new_Customer form .formControl input[type="email"],
+.new_Customer form .formControl input[type="password"],
+.new_Customer form .formControl select {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 3px;
+  padding: 7px 5px;
+  margin: 5px 0;
+  outline: none;
+}
+
+.new_Customer form .formControl select {
+  color: #8d9aa6;
+  border: 2px solid #272f3d;
+  margin-top: 20px;
+  padding: 12px 5px;
+}
+
+.new_Customer form .formControl select option {
+  background-color: #1a202a;
+  color: #efefef;
+  padding: 5px;
+  border: none;
+}
+
+.new_Customer form .pass_box {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.new_Customer form .pass_box .formControl {
+  width: 48%;
+}
+
+.new_Customer form .formControl > div {
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid #272f3d;
+  border-radius: 3px;
+  margin: 5px 0;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 5px;
+}
+
+.new_Customer form .formControl > div .icon {
+  color: #272f3d;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.new_Customer form .formControl > div .icon.hide {
+  display: none;
+}
+
+.new_Customer form .formControl > div input {
+  margin: 0;
+  border: none;
+  color: #fefefe;
+}
+
+.new_Customer form .formControl.radio,
+.new_Customer form .formControl.check {
+  flex-direction: row;
+  margin-top: 15px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.new_Customer form .formControl.check input {
+  margin: 4px 5px 0 0;
+}
+
+.new_Customer form .formControl.radio input {
+  margin: 3px 2px 0 25px;
+}
+
+.new_Customer form .formControl.radio input:first-child {
+  margin-left: 0;
+}
+
+.new_Customer form .formControl.radio label,
+.new_Customer form .formControl.check label {
+  margin: 0;
+  color: #4b5368;
+}
+
+.new_Customer form .formControl.radio .error {
+  width: 100%;
+}
+
+.new_Customer form .formControl input[type="radio"] {
+  display: grid;
+  place-content: center;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  font: inherit;
+  color: transparent;
+  width: 1.1em;
+  height: 1.1em;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.new_Customer form .formControl input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  background-color: #272f3d;
+}
+
+.new_Customer form .formControl input[type="radio"]:checked::before {
+  background-color: #7d73dc;
+}
+
+.new_Customer form .formControl input[type="radio"]:checked + label {
+  color: #efefef;
+}
+
+.new_Customer form .formControl input[type="checkbox"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  font: inherit;
+  color: #272f3d;
+  width: 1.1em;
+  height: 1.1em;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+}
+
+.new_Customer form .formControl input[type="checkbox"]::before {
+  content: "";
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  background-color: #7d73dc;
+}
+
+.new_Customer form .formControl input[type="checkbox"]:checked {
+  color: #fefefe;
+}
+
+.new_Customer form .formControl input[type="checkbox"]:checked + label {
+  color: #efefef;
+}
+
+.new_Customer form .formControl input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.new_Customer form .pass_box .formControl label {
+  margin: 0;
+}
+
+.new_Customer form .formControl .error {
+  color: red;
+  border: unset !important;
+}
+
+.new_Customer form button {
+  background-image: linear-gradient(to right, #0691b0, #22bdb1);
+  box-shadow: 0 0 10px rgba(34, 189, 177, 0.4);
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.new_Customer form button:disabled {
+  background-image: unset;
+  background-color: #4b5368;
+  color: #8d9aa6;
+  cursor: not-allowed;
+  box-shadow: unset;
+}
+
+/* customers */
+.customers {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.customers .singleCustomer {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #8d9aa6;
+  margin-top: 20px;
+  user-select: none;
+}
+
+.customers .singleCustomer:first-child {
+  margin-top: 400px !important;
+}
+
+.customers .singleCustomer > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customers .singleCustomer > div h2 {
+  font-weight: 500;
+}
+
+.customers .singleCustomer > div .icon {
+  font-size: 20px;
+  margin: 3px 5px 0 0;
+}
+
+.customers p.empty_list {
+  width: 100%;
+  margin-top: 20px;
+  color: red;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .layout {
+    width: 100%;
+  }
+  .layout main {
+    width: 100%;
+  }
+}
+
+@media (max-width: 510px) {
+  #root {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.55rem !important;
+  }
+
+  p,
+  li,
+  a,
+  label,
+  button,
+  select {
+    font-size: 0.8rem !important;
+  }
+
+  .layout main {
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .layout header {
+    justify-content: space-between;
+  }
+
+  .layout header a {
+    width: 47%;
+    margin: 0;
+  }
+
+  .new_Customer form .pass_box {
+    margin: 0;
+  }
+
+  .new_Customer form .pass_box {
+    flex-direction: column;
+  }
+
+  .new_Customer form .pass_box .formControl {
+    width: 100%;
+  }
+
+  .new_Customer form {
+    margin-top: 10px;
+  }
+
+  .new_Customer form .formControl label,
+  .new_Customer form .formControl,
+  .new_Customer form .formControl select,
+  .new_Customer form .formControl.radio,
+  .new_Customer form .formControl.check,
+  .new_Customer form .pass_box .formControl {
+    margin-top: 7px !important;
+  }
+
+  .new_Customer form .formControl.check input {
+    margin: 9px 5px 0 0;
+  }
+
+  .new_Customer form .formControl.radio input {
+    margin: 6px 2px 0 25px;
+  }
+
+  .new_Customer form .formControl input[type="text"],
+  .new_Customer form .formControl input[type="email"],
+  .new_Customer form .formControl input[type="password"] {
+    padding: 3px;
+  }
+
+  .new_Customer form .formControl select {
+    padding: 8px;
+  }
+}
